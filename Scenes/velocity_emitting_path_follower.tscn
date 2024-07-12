@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://ca77yfesax41d"]
+
+[ext_resource type="Script" path="res://Scripts/velocity_emit_path_follower.gd" id="1_tlfs5"]
+[ext_resource type="PackedScene" uid="uid://cnhqqjxmn8qe" path="res://Scenes/teacher.tscn" id="2_hkmmi"]
+
+[node name="VelocityEmittingPathFollower" type="PathFollow2D"]
+script = ExtResource("1_tlfs5")
+
+[node name="Teacher" parent="." instance=ExtResource("2_hkmmi")]
