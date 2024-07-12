@@ -1,9 +1,9 @@
-[gd_scene load_steps=17 format=3 uid="uid://cnhqqjxmn8qe"]
+[gd_scene load_steps=16 format=3 uid="uid://cnhqqjxmn8qe"]
 
 [ext_resource type="Script" path="res://Scripts/teacher_anim.gd" id="1_5e2m8"]
 [ext_resource type="Texture2D" uid="uid://df5wjrt2p4r1g" path="res://Assets/TeacherSpriteSheet.png" id="1_ugeoy"]
 [ext_resource type="Script" path="res://Scripts/teacher_view.gd" id="3_65ctx"]
-[ext_resource type="Script" path="res://Scripts/teacher_triangle.gd" id="4_w3r0o"]
+[ext_resource type="Script" path="res://Scripts/teacher_view_triangle.gd" id="4_s261n"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h5x48"]
 radius = 25.0
@@ -100,10 +100,8 @@ animations = [{
 "speed": 2.0
 }]
 
-[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_6us45"]
-
 [node name="Teacher" type="CharacterBody2D"]
-position = Vector2(100, 100)
+position = Vector2(0, -1)
 script = ExtResource("1_5e2m8")
 metadata/_edit_group_ = true
 
@@ -119,12 +117,7 @@ animation = &"turn"
 frame_progress = 0.766177
 
 [node name="TeacherView" type="ShapeCast2D" parent="."]
-shape = SubResource("ConvexPolygonShape2D_6us45")
 script = ExtResource("3_65ctx")
-base = 150
-height = 300
 
-[node name="Triangle" type="Polygon2D" parent="TeacherView"]
-rotation = 3.14159
-color = Color(0.0764694, 0.484084, 0.853127, 0.654902)
-script = ExtResource("4_w3r0o")
+[node name="Polygon2D" type="Polygon2D" parent="TeacherView"]
+script = ExtResource("4_s261n")

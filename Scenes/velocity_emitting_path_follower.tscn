@@ -7,3 +7,4 @@
 script = ExtResource("1_tlfs5")
 
 [node name="Teacher" parent="." instance=ExtResource("2_hkmmi")]
+position = Vector2(-3, -5)
