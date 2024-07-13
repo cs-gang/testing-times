@@ -1,0 +1,115 @@
+[gd_scene load_steps=14 format=3 uid="uid://cnhqqjxmn8qe"]
+
+[ext_resource type="Script" path="res://Scripts/teacher_anim.gd" id="1_5e2m8"]
+[ext_resource type="Texture2D" uid="uid://df5wjrt2p4r1g" path="res://Assets/TeacherSpriteSheet.png" id="1_ugeoy"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h5x48"]
+radius = 25.0
+height = 64.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gl25t"]
+atlas = ExtResource("1_ugeoy")
+region = Rect2(0, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i6gpf"]
+atlas = ExtResource("1_ugeoy")
+region = Rect2(128, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qcqq2"]
+atlas = ExtResource("1_ugeoy")
+region = Rect2(256, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tpb53"]
+atlas = ExtResource("1_ugeoy")
+region = Rect2(288, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oao16"]
+atlas = ExtResource("1_ugeoy")
+region = Rect2(96, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x67h8"]
+atlas = ExtResource("1_ugeoy")
+region = Rect2(160, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_chj3j"]
+atlas = ExtResource("1_ugeoy")
+region = Rect2(192, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0p4la"]
+atlas = ExtResource("1_ugeoy")
+region = Rect2(32, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j7g4p"]
+atlas = ExtResource("1_ugeoy")
+region = Rect2(64, 224, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r6s8u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gl25t")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i6gpf")
+}],
+"loop": true,
+"name": &"idle_back",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qcqq2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tpb53")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oao16")
+}],
+"loop": true,
+"name": &"turn",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x67h8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_chj3j")
+}],
+"loop": true,
+"name": &"walk_back",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0p4la")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j7g4p")
+}],
+"loop": true,
+"name": &"walk_front",
+"speed": 2.0
+}]
+
+[node name="Teacher" type="CharacterBody2D"]
+position = Vector2(0, -1)
+script = ExtResource("1_5e2m8")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 0)
+shape = SubResource("CapsuleShape2D_h5x48")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(3, -1)
+scale = Vector2(2, 2.09375)
+sprite_frames = SubResource("SpriteFrames_r6s8u")
+animation = &"turn"
+frame_progress = 0.766177
