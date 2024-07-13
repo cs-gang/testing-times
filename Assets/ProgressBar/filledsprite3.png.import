@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cih0bpeldfxo1"
-path="res://.godot/imported/TeacherSpriteSheet.png-05379e7bfbab20561f506c3d345ecc9f.ctex"
+uid="uid://bduqdm20m4y3i"
+path="res://.godot/imported/filledsprite3.png-19e00cbc981bfd167cc979cbe34125a8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/TeacherSpriteSheet.png"
-dest_files=["res://.godot/imported/TeacherSpriteSheet.png-05379e7bfbab20561f506c3d345ecc9f.ctex"]
+source_file="res://Assets/ProgressBar/filledsprite3.png"
+dest_files=["res://.godot/imported/filledsprite3.png-19e00cbc981bfd167cc979cbe34125a8.ctex"]
 
 [params]
 
