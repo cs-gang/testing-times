@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://chr6xt1f6b225"]
+
+[ext_resource type="Texture2D" uid="uid://difay0y5cvno3" path="res://Assets/Mijanistyle_pupils/Schülerinnen_sheet_200p.png" id="1_8nuvf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ldt31"]
+atlas = ExtResource("1_8nuvf")
+region = Rect2(48, 518, 48, 74)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mviw5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ldt31")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Student4" type="AnimatedSprite2D"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_mviw5")
