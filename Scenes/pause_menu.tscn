@@ -1,0 +1,66 @@
+[gd_scene load_steps=8 format=3 uid="uid://db5cua8bcny0l"]
+
+[ext_resource type="Texture2D" uid="uid://c50ngdcpxheci" path="res://Assets/Pause_menu/menu2.png" id="1_fi68c"]
+[ext_resource type="Texture2D" uid="uid://blxhkcyckodxc" path="res://Assets/Pause_menu/resum1.png" id="2_gu7of"]
+[ext_resource type="Texture2D" uid="uid://dc42lsov4r1k" path="res://Assets/Pause_menu/resum2.png" id="3_lt3k6"]
+[ext_resource type="Texture2D" uid="uid://crb7bodb8pi0y" path="res://Assets/Pause_menu/settings1.png" id="4_7atwy"]
+[ext_resource type="Texture2D" uid="uid://c5x6aa3wsirr7" path="res://Assets/Pause_menu/settings2.png" id="5_qbxnf"]
+[ext_resource type="Texture2D" uid="uid://d3i2h2ioomar8" path="res://Assets/Pause_menu/exit1.png" id="6_tgwn4"]
+[ext_resource type="Texture2D" uid="uid://dpeen17nef40r" path="res://Assets/Pause_menu/exit2.png" id="7_a3o8x"]
+
+[node name="PauseMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -46.0
+offset_top = -56.0
+offset_right = 46.0
+offset_bottom = 56.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3, 3)
+pivot_offset = Vector2(46, 56)
+texture = ExtResource("1_fi68c")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -54.0
+offset_top = 5.0
+offset_right = 54.0
+offset_bottom = 98.0
+grow_horizontal = 2
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(53.81, 18.685)
+alignment = 1
+
+[node name="ResumeButton" type="TextureButton" parent="NinePatchRect/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 2
+texture_normal = ExtResource("2_gu7of")
+texture_pressed = ExtResource("3_lt3k6")
+
+[node name="SettingsButton" type="TextureButton" parent="NinePatchRect/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+texture_normal = ExtResource("4_7atwy")
+texture_pressed = ExtResource("5_qbxnf")
+
+[node name="ResumeButton3" type="TextureButton" parent="NinePatchRect/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 10
+texture_normal = ExtResource("6_tgwn4")
+texture_pressed = ExtResource("7_a3o8x")
