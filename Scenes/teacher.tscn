@@ -6,8 +6,8 @@
 [ext_resource type="Script" path="res://Scripts/teacher_triangle.gd" id="4_w3r0o"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h5x48"]
-radius = 25.0
-height = 64.0
+radius = 12.0
+height = 38.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gl25t"]
 atlas = ExtResource("1_ugeoy")
@@ -103,22 +103,22 @@ animations = [{
 [sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_6us45"]
 
 [node name="Teacher" type="CharacterBody2D"]
-position = Vector2(100, 100)
+position = Vector2(73, 85)
 script = ExtResource("1_5e2m8")
-metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2, 0)
+position = Vector2(-9, -11)
 shape = SubResource("CapsuleShape2D_h5x48")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(3, -1)
-scale = Vector2(2, 2.09375)
+position = Vector2(-10, -11)
+scale = Vector2(1.15625, 1.21045)
 sprite_frames = SubResource("SpriteFrames_r6s8u")
 animation = &"turn"
 frame_progress = 0.766177
 
 [node name="TeacherView" type="ShapeCast2D" parent="."]
+position = Vector2(-9, -2)
 shape = SubResource("ConvexPolygonShape2D_6us45")
 script = ExtResource("3_65ctx")
 base = 150
