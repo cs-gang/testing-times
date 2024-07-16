@@ -1,12 +1,12 @@
 [gd_scene load_steps=8 format=3 uid="uid://db5cua8bcny0l"]
 
-[ext_resource type="Texture2D" uid="uid://c50ngdcpxheci" path="res://Assets/Pause_menu/menu2.png" id="1_fi68c"]
-[ext_resource type="Texture2D" uid="uid://blxhkcyckodxc" path="res://Assets/Pause_menu/resum1.png" id="2_gu7of"]
-[ext_resource type="Texture2D" uid="uid://dc42lsov4r1k" path="res://Assets/Pause_menu/resum2.png" id="3_lt3k6"]
-[ext_resource type="Texture2D" uid="uid://crb7bodb8pi0y" path="res://Assets/Pause_menu/settings1.png" id="4_7atwy"]
-[ext_resource type="Texture2D" uid="uid://c5x6aa3wsirr7" path="res://Assets/Pause_menu/settings2.png" id="5_qbxnf"]
-[ext_resource type="Texture2D" uid="uid://d3i2h2ioomar8" path="res://Assets/Pause_menu/exit1.png" id="6_tgwn4"]
-[ext_resource type="Texture2D" uid="uid://dpeen17nef40r" path="res://Assets/Pause_menu/exit2.png" id="7_a3o8x"]
+[ext_resource type="Texture2D" uid="uid://c50ngdcpxheci" path="res://Assets/Menu/menu2.png" id="1_fi68c"]
+[ext_resource type="Texture2D" uid="uid://blxhkcyckodxc" path="res://Assets/Menu/resum1.png" id="2_gu7of"]
+[ext_resource type="Texture2D" uid="uid://dc42lsov4r1k" path="res://Assets/Menu/resum2.png" id="3_lt3k6"]
+[ext_resource type="Texture2D" uid="uid://crb7bodb8pi0y" path="res://Assets/Menu/settings1.png" id="4_7atwy"]
+[ext_resource type="Texture2D" uid="uid://c5x6aa3wsirr7" path="res://Assets/Menu/settings2.png" id="5_qbxnf"]
+[ext_resource type="Texture2D" uid="uid://d3i2h2ioomar8" path="res://Assets/Menu/exit1.png" id="6_tgwn4"]
+[ext_resource type="Texture2D" uid="uid://dpeen17nef40r" path="res://Assets/Menu/exit2.png" id="7_a3o8x"]
 
 [node name="PauseMenu" type="Control"]
 layout_mode = 3
