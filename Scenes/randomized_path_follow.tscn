@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dgwtatm0l4lcl"]
+
+[ext_resource type="Script" path="res://Scripts/random_path_follow.gd" id="1_rnc1a"]
+[ext_resource type="PackedScene" uid="uid://cnhqqjxmn8qe" path="res://Scenes/teacher.tscn" id="2_pbhmr"]
+
+[node name="RandomizedPathFollow" type="PathFollow2D"]
+script = ExtResource("1_rnc1a")
+wait_time = 0.5
+random_speed = true
+random_interval_size = 0.4
+
+[node name="Teacher" parent="." instance=ExtResource("2_pbhmr")]
+position = Vector2(9, 8)
