@@ -1,0 +1,64 @@
+[gd_scene load_steps=8 format=3 uid="uid://bt7rowtww6tj3"]
+
+[ext_resource type="Texture2D" uid="uid://difay0y5cvno3" path="res://Assets/Mijanistyle_pupils/Schülerinnen_sheet_200p.png" id="1_2t37x"]
+[ext_resource type="Script" path="res://Students/student.gd" id="2_wt4td"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bwhe6"]
+atlas = ExtResource("1_2t37x")
+region = Rect2(336, 222, 48, 74)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i0kbj"]
+atlas = ExtResource("1_2t37x")
+region = Rect2(336, 0, 48, 74)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_owiuy"]
+atlas = ExtResource("1_2t37x")
+region = Rect2(336, 74, 48, 74)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5heyo"]
+atlas = ExtResource("1_2t37x")
+region = Rect2(336, 148, 48, 74)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_113kv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bwhe6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i0kbj")
+}],
+"loop": true,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_owiuy")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5heyo")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}]
+
+[node name="Student2" type="AnimatedSprite2D"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_113kv")
+script = ExtResource("2_wt4td")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
