@@ -63,6 +63,10 @@ func _process(delta):
 		isLooking = false; 
 		self.play("idle")
 		
+	if Input.is_action_just_pressed("pause"):
+		get_tree().paused = true
+		get_tree().change_scene_to_file("res://Scenes/pause_menu.tscn")
+		
 	if !isLooking:
 		if camera.position.y > originalCamY: 
 			camera.position.y -= cameraSpeed * delta;

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bduqdm20m4y3i"
-path="res://.godot/imported/filledsprite3.png-19e00cbc981bfd167cc979cbe34125a8.ctex"
+uid="uid://de6rvbf4h1ypl"
+path="res://.godot/imported/filledprogbar2.png-d6a19cf7bf23978c3845273b2faefb7b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/ProgressBar/filledsprite3.png"
-dest_files=["res://.godot/imported/filledsprite3.png-19e00cbc981bfd167cc979cbe34125a8.ctex"]
+source_file="res://Assets/ProgressBar/filledprogbar2.png"
+dest_files=["res://.godot/imported/filledprogbar2.png-d6a19cf7bf23978c3845273b2faefb7b.ctex"]
 
 [params]
 

@@ -7,7 +7,7 @@ func _ready():
 	Engine.max_fps = 60
 
 func _process(delta):
-	if Input.is_action_pressed("ui_accept"):
+	if Input.is_action_pressed("cheat"):
 		prog_bar_value += 1
 		if prog_bar_value%60 == 0:
 			$ProgBar.value +=5

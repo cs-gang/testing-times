@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://c61aprrgsy17v"]
+[gd_scene load_steps=10 format=3 uid="uid://c61aprrgsy17v"]
 
 [ext_resource type="Texture2D" uid="uid://blnsvy2h22vxu" path="res://Assets/Menu/play1.png" id="1_hhidl"]
+[ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_otriv"]
 [ext_resource type="Texture2D" uid="uid://c8aj4aqc0bex2" path="res://Assets/Menu/play2.png" id="2_5fufq"]
 [ext_resource type="Texture2D" uid="uid://cot1srxlb63a2" path="res://Assets/Menu/settingsmain1.png" id="3_vf5m4"]
 [ext_resource type="Texture2D" uid="uid://cf1a21udhvgrm" path="res://Assets/Menu/settingsmain2.png" id="4_wun2a"]
@@ -16,6 +17,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_otriv")
 
 [node name="BgColor" type="ColorRect" parent="."]
 layout_mode = 1
@@ -81,3 +83,7 @@ scale = Vector2(2, 2)
 toggle_mode = true
 texture_normal = ExtResource("7_ivpem")
 texture_pressed = ExtResource("8_ucdxs")
+
+[connection signal="pressed" from="MainVContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="MainVContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="MainVContainer/ExitButton" to="." method="_on_exit_button_pressed"]
