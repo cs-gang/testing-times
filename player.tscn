@@ -3,6 +3,18 @@
 [ext_resource type="Texture2D" uid="uid://difay0y5cvno3" path="res://Assets/Mijanistyle_pupils/Schülerinnen_sheet_200p.png" id="1_selbp"]
 [ext_resource type="Script" path="res://player.gd" id="2_nw41o"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_2jula"]
+atlas = ExtResource("1_selbp")
+region = Rect2(0, 222, 48, 74)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vns46"]
+atlas = ExtResource("1_selbp")
+region = Rect2(48, 222, 48, 74)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e1sdp"]
+atlas = ExtResource("1_selbp")
+region = Rect2(96, 222, 48, 74)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_qgc8s"]
 atlas = ExtResource("1_selbp")
 region = Rect2(48, 0, 48, 74)
@@ -19,20 +31,22 @@ region = Rect2(48, 74, 48, 74)
 atlas = ExtResource("1_selbp")
 region = Rect2(48, 148, 48, 74)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qkooy"]
-atlas = ExtResource("1_selbp")
-region = Rect2(0, 222, 48, 74)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yh05p"]
-atlas = ExtResource("1_selbp")
-region = Rect2(48, 222, 48, 74)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nyll7"]
-atlas = ExtResource("1_selbp")
-region = Rect2(96, 222, 48, 74)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_k1pn3"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2jula")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vns46")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e1sdp")
+}],
+"loop": true,
+"name": &"cheat",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_qgc8s")
@@ -64,20 +78,6 @@ animations = [{
 "loop": true,
 "name": &"right",
 "speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qkooy")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_yh05p")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_nyll7")
-}],
-"loop": true,
-"name": &"up",
-"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w45y3"]
@@ -86,7 +86,7 @@ size = Vector2(23, 53)
 [node name="Player" type="AnimatedSprite2D"]
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_k1pn3")
-animation = &"idle"
+animation = &"cheat"
 script = ExtResource("2_nw41o")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

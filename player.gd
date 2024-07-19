@@ -2,6 +2,7 @@ extends AnimatedSprite2D
 
 var isLooking = false;
 
+var isCheating = false;
 
 @onready
 var camera = get_node("%Camera2D");
@@ -28,7 +29,6 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if Input.is_action_pressed("up") and !isLooking:
-		self.play("up")
 		isLooking = true;
 		
 	if Input.is_action_pressed("up"):
@@ -66,6 +66,14 @@ func _process(delta):
 	if Input.is_action_just_pressed("pause"):
 		get_tree().paused = true
 		get_tree().change_scene_to_file("res://Scenes/pause_menu.tscn")
+		
+	if Input.is_action_pressed("cheat"):
+		self.play("cheat")
+		isCheating = true;
+	
+	if Input.is_action_just_released("cheat"):
+		isCheating = false;
+		self.play("idle")
 		
 	if !isLooking:
 		if camera.position.y > originalCamY: 
