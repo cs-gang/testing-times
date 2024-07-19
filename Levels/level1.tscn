@@ -26,7 +26,7 @@ originalCamY = 146
 limitCamXPos = 162
 limitCamXNeg = 70
 limitCamYPos = 161
-limitCamYNeg = 80
+limitCamYNeg = -38
 
 [node name="Camera2D" type="Camera2D" parent="."]
 unique_name_in_owner = true
