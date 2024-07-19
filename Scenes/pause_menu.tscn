@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://db5cua8bcny0l"]
+[gd_scene load_steps=9 format=3 uid="uid://db5cua8bcny0l"]
 
+[ext_resource type="Script" path="res://Scripts/pause_menu.gd" id="1_acyii"]
 [ext_resource type="Texture2D" uid="uid://c50ngdcpxheci" path="res://Assets/Menu/menu2.png" id="1_fi68c"]
 [ext_resource type="Texture2D" uid="uid://blxhkcyckodxc" path="res://Assets/Menu/resum1.png" id="2_gu7of"]
 [ext_resource type="Texture2D" uid="uid://dc42lsov4r1k" path="res://Assets/Menu/resum2.png" id="3_lt3k6"]
@@ -9,12 +10,14 @@
 [ext_resource type="Texture2D" uid="uid://dpeen17nef40r" path="res://Assets/Menu/exit2.png" id="7_a3o8x"]
 
 [node name="PauseMenu" type="Control"]
+process_mode = 2
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_acyii")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 1
@@ -59,8 +62,12 @@ size_flags_vertical = 6
 texture_normal = ExtResource("4_7atwy")
 texture_pressed = ExtResource("5_qbxnf")
 
-[node name="ResumeButton3" type="TextureButton" parent="NinePatchRect/VBoxContainer"]
+[node name="ExitButton" type="TextureButton" parent="NinePatchRect/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 10
 texture_normal = ExtResource("6_tgwn4")
 texture_pressed = ExtResource("7_a3o8x")
+
+[connection signal="pressed" from="NinePatchRect/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="NinePatchRect/VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="NinePatchRect/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
