@@ -13,6 +13,9 @@ func _process(delta):
 			$ProgBar.value +=5
 	else:
 		prog_bar_value = 0
+	
+	if $ProgBar.value == 100:
+		get_tree().change_scene_to_file("res://Scenes/win_screen.tscn")
 
 
 
