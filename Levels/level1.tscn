@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://6yrc42yn2ts1"]
+[gd_scene load_steps=11 format=3 uid="uid://6yrc42yn2ts1"]
 
 [ext_resource type="TileSet" uid="uid://nled28ppjqbo" path="res://class_tileset.tres" id="1_2gxfu"]
 [ext_resource type="PackedScene" uid="uid://dpuiga0yokbpx" path="res://player.tscn" id="2_an1hv"]
@@ -8,6 +8,13 @@
 [ext_resource type="PackedScene" uid="uid://chr6xt1f6b225" path="res://Students/student4.tscn" id="6_y5o6d"]
 [ext_resource type="PackedScene" uid="uid://cp0i7b5nrywhy" path="res://Students/student5.tscn" id="7_68r7o"]
 [ext_resource type="PackedScene" uid="uid://b3mpdhgmjg2h7" path="res://Scenes/progress_bar.tscn" id="8_uyh27"]
+[ext_resource type="PackedScene" uid="uid://dgwtatm0l4lcl" path="res://Scenes/randomized_path_follow.tscn" id="9_51gu2"]
+
+[sub_resource type="Curve2D" id="Curve2D_6ue1s"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 225, -22, 0, 0, 0, 0, 227, 206, 0, 0, 0, 0, 81, 206, 0, 0, 0, 0, 80, -13, 0, 0, 0, 0, 8, -15, 0, 0, 0, 0, 154, -12, 0, 0, 0, 0, 154, 210, 0, 0, 0, 0, 9, 207, 0, 0, 0, 0, 4, -11, 0, 0, 0, 0, 223, -13)
+}
+point_count = 10
 
 [node name="Classroom" type="Node2D"]
 
@@ -125,3 +132,12 @@ position = Vector2(260, 79)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="ProgressBar" parent="CanvasLayer" instance=ExtResource("8_uyh27")]
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_6ue1s")
+
+[node name="RandomizedPathFollow" parent="Path2D" instance=ExtResource("9_51gu2")]
+position = Vector2(225, -22)
+rotation = 0.0174533
+scale = Vector2(0.7, 0.7)
+rotates = false

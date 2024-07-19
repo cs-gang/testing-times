@@ -1,7 +1,7 @@
 [gd_scene load_steps=17 format=3 uid="uid://cnhqqjxmn8qe"]
 
 [ext_resource type="Script" path="res://Scripts/teacher_anim.gd" id="1_5e2m8"]
-[ext_resource type="Texture2D" uid="uid://df5wjrt2p4r1g" path="res://Assets/TeacherSpriteSheet.png" id="1_ugeoy"]
+[ext_resource type="Texture2D" uid="uid://cih0bpeldfxo1" path="res://Assets/TeacherSpriteSheet.png" id="1_ugeoy"]
 [ext_resource type="Script" path="res://Scripts/teacher_view.gd" id="3_65ctx"]
 [ext_resource type="Script" path="res://Scripts/teacher_triangle.gd" id="4_w3r0o"]
 
@@ -114,12 +114,13 @@ shape = SubResource("CapsuleShape2D_h5x48")
 position = Vector2(-10, -11)
 scale = Vector2(1.15625, 1.21045)
 sprite_frames = SubResource("SpriteFrames_r6s8u")
-animation = &"turn"
-frame_progress = 0.766177
+animation = &"walk_front"
 
 [node name="TeacherView" type="ShapeCast2D" parent="."]
 position = Vector2(-9, -2)
 shape = SubResource("ConvexPolygonShape2D_6us45")
+collision_mask = 2
+collide_with_areas = true
 script = ExtResource("3_65ctx")
 base = 150
 height = 300

@@ -28,7 +28,6 @@ var limitCamYNeg = 0;
 func _ready():
 	self.play("idle")
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if Input.is_action_pressed("up") and !isLooking:
