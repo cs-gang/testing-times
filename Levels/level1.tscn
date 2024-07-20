@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://6yrc42yn2ts1"]
+[gd_scene load_steps=21 format=3 uid="uid://6yrc42yn2ts1"]
 
 [ext_resource type="TileSet" uid="uid://nled28ppjqbo" path="res://class_tileset.tres" id="1_2gxfu"]
 [ext_resource type="PackedScene" uid="uid://dpuiga0yokbpx" path="res://player.tscn" id="2_an1hv"]
@@ -7,10 +7,18 @@
 [ext_resource type="PackedScene" uid="uid://holrpgb5whr3" path="res://Students/student3.tscn" id="5_xhive"]
 [ext_resource type="PackedScene" uid="uid://chr6xt1f6b225" path="res://Students/student4.tscn" id="6_y5o6d"]
 [ext_resource type="PackedScene" uid="uid://cp0i7b5nrywhy" path="res://Students/student5.tscn" id="7_68r7o"]
+[ext_resource type="Texture2D" uid="uid://c50ngdcpxheci" path="res://Assets/Menu/menu2.png" id="8_pdj0v"]
 [ext_resource type="PackedScene" uid="uid://b3mpdhgmjg2h7" path="res://Scenes/progress_bar.tscn" id="8_uyh27"]
 [ext_resource type="PackedScene" uid="uid://dgwtatm0l4lcl" path="res://Scenes/randomized_path_follow.tscn" id="9_51gu2"]
 [ext_resource type="PackedScene" uid="uid://dsabe8wrdlhq" path="res://game_timer.tscn" id="9_i706d"]
+[ext_resource type="Texture2D" uid="uid://blxhkcyckodxc" path="res://Assets/Menu/resum1.png" id="9_vtr6c"]
 [ext_resource type="PackedScene" uid="uid://dj6m1p12lw8pw" path="res://Lives.tscn" id="10_vj1m3"]
+[ext_resource type="Texture2D" uid="uid://dc42lsov4r1k" path="res://Assets/Menu/resum2.png" id="10_y42cq"]
+[ext_resource type="Texture2D" uid="uid://d3i2h2ioomar8" path="res://Assets/Menu/exit1.png" id="13_31q8c"]
+[ext_resource type="Texture2D" uid="uid://ce2upwwugxaaf" path="res://Assets/Menu/mute1.png" id="13_e1e28"]
+[ext_resource type="Texture2D" uid="uid://dpeen17nef40r" path="res://Assets/Menu/exit2.png" id="14_q2kbf"]
+[ext_resource type="Texture2D" uid="uid://mmjasnako7yw" path="res://Assets/Menu/mute2.png" id="14_wuuvk"]
+[ext_resource type="Script" path="res://Scenes/MusicButton.gd" id="15_uel5p"]
 
 [sub_resource type="Curve2D" id="Curve2D_6ue1s"]
 _data = {
@@ -155,3 +163,77 @@ position = Vector2(225, -22)
 rotation = 0.0174533
 scale = Vector2(0.7, 0.7)
 rotates = false
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+process_mode = 2
+
+[node name="PauseContainer" type="NinePatchRect" parent="CanvasLayer2"]
+unique_name_in_owner = true
+process_mode = 2
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -46.0
+offset_top = -56.0
+offset_right = 46.0
+offset_bottom = 56.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3, 3)
+pivot_offset = Vector2(46, 56)
+texture = ExtResource("8_pdj0v")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer2/PauseContainer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -54.0
+offset_top = -49.0
+offset_right = 54.0
+offset_bottom = 9.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(54, 28)
+alignment = 1
+
+[node name="ResumeButton" type="TextureButton" parent="CanvasLayer2/PauseContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 2
+texture_normal = ExtResource("9_vtr6c")
+texture_pressed = ExtResource("10_y42cq")
+
+[node name="ExitButton" type="TextureButton" parent="CanvasLayer2/PauseContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 10
+texture_normal = ExtResource("13_31q8c")
+texture_pressed = ExtResource("14_q2kbf")
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer2/PauseContainer"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -47.0
+offset_right = 20.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(20, 20)
+toggle_mode = true
+texture_normal = ExtResource("13_e1e28")
+texture_pressed = ExtResource("14_wuuvk")
+script = ExtResource("15_uel5p")
+
+[connection signal="pressed" from="CanvasLayer2/PauseContainer/VBoxContainer/ResumeButton" to="Player" method="_on_resume_button_pressed"]
+[connection signal="pressed" from="CanvasLayer2/PauseContainer/VBoxContainer/ExitButton" to="Player" method="_on_exit_button_pressed"]
+[connection signal="toggled" from="CanvasLayer2/PauseContainer/TextureButton" to="CanvasLayer2/PauseContainer/TextureButton" method="_on_toggled"]

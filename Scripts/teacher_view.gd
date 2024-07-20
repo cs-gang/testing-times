@@ -6,6 +6,7 @@ extends ShapeCast2D
 
 var count = 0; 
 @onready var cooldown = get_node("Cooldown")
+@onready var soundEffect = $"AudioStreamPlayer2D"
 @export var cooldownDuration = 3
 
 @onready var lives = $"../../../../CanvasLayer/Control"
@@ -24,6 +25,7 @@ func _process(delta):
 			if self.get_collider(0).get_parent().isCheating:
 				lives.get_children()[count].play("on")
 				count+=1
+				soundEffect.play()
 				if count == 3: 
 					get_tree().change_scene_to_file("res://Scenes/lose_screen.tscn")
 				cooldown.start(cooldownDuration)

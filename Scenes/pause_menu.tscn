@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://db5cua8bcny0l"]
+[gd_scene load_steps=12 format=3 uid="uid://db5cua8bcny0l"]
 
 [ext_resource type="Script" path="res://Scripts/pause_menu.gd" id="1_acyii"]
 [ext_resource type="Texture2D" uid="uid://c50ngdcpxheci" path="res://Assets/Menu/menu2.png" id="1_fi68c"]
@@ -8,6 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://c5x6aa3wsirr7" path="res://Assets/Menu/settings2.png" id="5_qbxnf"]
 [ext_resource type="Texture2D" uid="uid://d3i2h2ioomar8" path="res://Assets/Menu/exit1.png" id="6_tgwn4"]
 [ext_resource type="Texture2D" uid="uid://dpeen17nef40r" path="res://Assets/Menu/exit2.png" id="7_a3o8x"]
+[ext_resource type="Texture2D" uid="uid://ce2upwwugxaaf" path="res://Assets/Menu/mute1.png" id="9_5exui"]
+[ext_resource type="Texture2D" uid="uid://mmjasnako7yw" path="res://Assets/Menu/mute2.png" id="10_hgt87"]
+[ext_resource type="Script" path="res://Scenes/MusicButton.gd" id="11_ng2m8"]
 
 [node name="PauseMenu" type="Control"]
 process_mode = 2
@@ -77,6 +80,26 @@ size_flags_vertical = 10
 texture_normal = ExtResource("6_tgwn4")
 texture_pressed = ExtResource("7_a3o8x")
 
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -606.0
+offset_top = -280.0
+offset_right = -566.0
+offset_bottom = -240.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(1.5, 1.5)
+toggle_mode = true
+texture_normal = ExtResource("9_5exui")
+texture_pressed = ExtResource("10_hgt87")
+script = ExtResource("11_ng2m8")
+
 [connection signal="pressed" from="NinePatchRect/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="NinePatchRect/VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="NinePatchRect/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="toggled" from="TextureButton" to="TextureButton" method="_on_toggled"]

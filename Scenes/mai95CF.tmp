@@ -3,8 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://blnsvy2h22vxu" path="res://Assets/Menu/play1.png" id="1_hhidl"]
 [ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_otriv"]
 [ext_resource type="Texture2D" uid="uid://c8aj4aqc0bex2" path="res://Assets/Menu/play2.png" id="2_5fufq"]
-[ext_resource type="Texture2D" uid="uid://bcyj1y4b32vgk" path="res://Assets/Templates/mainbg.png" id="2_g0ccb"]
-[ext_resource type="FontFile" uid="uid://cdi0cxfwvin85" path="res://Assets/Fonts/upheavtt.ttf" id="3_iypy5"]
+[ext_resource type="Texture2D" uid="uid://cot1srxlb63a2" path="res://Assets/Menu/settingsmain1.png" id="3_vf5m4"]
+[ext_resource type="Texture2D" uid="uid://cf1a21udhvgrm" path="res://Assets/Menu/settingsmain2.png" id="4_wun2a"]
 [ext_resource type="Texture2D" uid="uid://bn773qkxio5eu" path="res://Assets/Menu/exitmain1.png" id="5_ov658"]
 [ext_resource type="Texture2D" uid="uid://d37sxrdvfemi4" path="res://Assets/Menu/exitmain2.png" id="6_ca2ev"]
 [ext_resource type="Texture2D" uid="uid://ce2upwwugxaaf" path="res://Assets/Menu/mute1.png" id="7_ivpem"]
@@ -18,8 +18,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
 script = ExtResource("1_otriv")
 
 [node name="BgColor" type="ColorRect" parent="."]
@@ -31,42 +29,6 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.65098, 0.505882, 0.368627, 1)
 
-[node name="BgBorder" type="NinePatchRect" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -210.0
-offset_top = -115.5
-offset_right = 210.0
-offset_bottom = 115.5
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(2.7, 2.7)
-pivot_offset = Vector2(210, 115)
-texture = ExtResource("2_g0ccb")
-axis_stretch_horizontal = 1
-axis_stretch_vertical = 1
-
-[node name="TestingTimes" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -576.0
-offset_top = 140.0
-offset_right = 576.0
-offset_bottom = 230.0
-grow_horizontal = 2
-pivot_offset = Vector2(576, 45)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_iypy5")
-theme_override_font_sizes/font_size = 100
-text = "Testing times"
-horizontal_alignment = 1
-
 [node name="MainVContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 7
@@ -75,9 +37,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -71.0
-offset_top = -314.0
+offset_top = -348.0
 offset_right = 71.0
-offset_bottom = -241.0
+offset_bottom = -233.0
 grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(2, 2)
@@ -90,6 +52,13 @@ size_flags_horizontal = 4
 size_flags_vertical = 2
 texture_normal = ExtResource("1_hhidl")
 texture_pressed = ExtResource("2_5fufq")
+
+[node name="SettingsButton" type="TextureButton" parent="MainVContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 2
+texture_normal = ExtResource("3_vf5m4")
+texture_pressed = ExtResource("4_wun2a")
 
 [node name="ExitButton" type="TextureButton" parent="MainVContainer"]
 layout_mode = 2
@@ -105,10 +74,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -132.0
-offset_top = -128.0
-offset_right = -92.0
-offset_bottom = -88.0
+offset_left = -120.0
+offset_top = -110.0
+offset_right = -80.0
+offset_bottom = -70.0
 grow_horizontal = 0
 grow_vertical = 0
 scale = Vector2(2, 2)
@@ -118,5 +87,6 @@ texture_pressed = ExtResource("8_ucdxs")
 script = ExtResource("10_ulfgp")
 
 [connection signal="pressed" from="MainVContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="MainVContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="MainVContainer/ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="toggled" from="TextureButton" to="TextureButton" method="_on_toggled"]

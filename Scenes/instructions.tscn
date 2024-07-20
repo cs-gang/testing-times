@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cmrmcklcy41c0"]
+[gd_scene load_steps=6 format=3 uid="uid://cmrmcklcy41c0"]
 
 [ext_resource type="Script" path="res://Scripts/instructions.gd" id="1_2i2xi"]
 [ext_resource type="FontFile" uid="uid://cdi0cxfwvin85" path="res://Assets/Fonts/upheavtt.ttf" id="2_0xkwc"]
+[ext_resource type="Texture2D" uid="uid://bcyj1y4b32vgk" path="res://Assets/Templates/mainbg.png" id="2_i6rxf"]
 [ext_resource type="Texture2D" uid="uid://blnsvy2h22vxu" path="res://Assets/Menu/play1.png" id="3_kxvxy"]
 [ext_resource type="Texture2D" uid="uid://c8aj4aqc0bex2" path="res://Assets/Menu/play2.png" id="4_sm66j"]
 
@@ -22,6 +23,25 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.65098, 0.505882, 0.368627, 1)
+
+[node name="BgBorder" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -210.0
+offset_top = -115.5
+offset_right = 210.0
+offset_bottom = 115.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2.7, 2.7)
+pivot_offset = Vector2(210, 115)
+texture = ExtResource("2_i6rxf")
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
 
 [node name="InstructionsLabel" type="Label" parent="."]
 layout_mode = 1
