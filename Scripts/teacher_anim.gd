@@ -8,7 +8,7 @@ func _physics_process(delta):
 	if velocity.y > 0:
 		$AnimatedSprite2D.play("walk_front")
 		$TeacherView.rotation_degrees = 0
-		$TeacherView.enabled = true
+		#$TeacherView.enabled = true
 	elif velocity.y < 0:
 		$AnimatedSprite2D.play("walk_back")
 		$TeacherView.rotation_degrees = 180
@@ -27,4 +27,4 @@ func _physics_process(delta):
 	
 	if velocity.x == 0 and velocity.y == 0:
 		$AnimatedSprite2D.play("idle")
-		$TeacherView.enabled = true
+		#$TeacherView.enabled = true
