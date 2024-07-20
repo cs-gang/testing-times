@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=3 uid="uid://dj6m1p12lw8pw"]
+
+[ext_resource type="Texture2D" uid="uid://ym6eyl808sqw" path="res://Assets/Sprite-0001.png" id="1_yudhf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xryt6"]
+atlas = ExtResource("1_yudhf")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j0ko2"]
+atlas = ExtResource("1_yudhf")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jbn64"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xryt6")
+}],
+"loop": true,
+"name": &"off",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j0ko2")
+}],
+"loop": true,
+"name": &"on",
+"speed": 5.0
+}]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="life1" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_jbn64")
+animation = &"off"
+
+[node name="life2" type="AnimatedSprite2D" parent="."]
+position = Vector2(18, 0)
+sprite_frames = SubResource("SpriteFrames_jbn64")
+animation = &"off"
+
+[node name="life3" type="AnimatedSprite2D" parent="."]
+position = Vector2(36, 0)
+sprite_frames = SubResource("SpriteFrames_jbn64")
+animation = &"off"

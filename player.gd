@@ -2,7 +2,7 @@ extends AnimatedSprite2D
 
 var isLooking = false;
 
-var isCheating = false;
+@export var isCheating = false;
 
 @onready
 var camera = get_node("%Camera2D");
@@ -27,7 +27,6 @@ var limitCamYNeg = 0;
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	self.play("idle")
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -91,7 +90,3 @@ func _process(delta):
 			camera.position.x -= cameraSpeed * delta;
 		if camera.position.x < originalCamX: 
 			camera.position.x += cameraSpeed * delta;
-	
-		
-	
-		
