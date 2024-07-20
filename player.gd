@@ -8,6 +8,9 @@ var isLooking = false;
 var camera = get_node("%Camera2D");
 
 @onready
+var pause = get_node("%PauseContainer")
+
+@onready
 var audioStreamPlayer = get_node("AudioStreamPlayer2D");
 
 @export
@@ -27,6 +30,7 @@ var limitCamYNeg = 0;
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	self.play("idle")
+	pause.hide()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -67,7 +71,8 @@ func _process(delta):
 		
 	if Input.is_action_just_pressed("pause"):
 		get_tree().paused = true
-		get_tree().change_scene_to_file("res://Scenes/pause_menu.tscn")
+		pause.show()
+		
 		
 	if Input.is_action_pressed("cheat"):
 		self.play("cheat")
@@ -90,3 +95,12 @@ func _process(delta):
 			camera.position.x -= cameraSpeed * delta;
 		if camera.position.x < originalCamX: 
 			camera.position.x += cameraSpeed * delta;'''
+
+
+func _on_resume_button_pressed():
+	pause.hide()
+	get_tree().paused = false
+
+func _on_exit_button_pressed():
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
