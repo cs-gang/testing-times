@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://xoniqtudxkuv"
-path="res://.godot/imported/Drawing 1.wav-d5cc7053f62cfe14c5978340b1c5de7c.sample"
+path="res://.godot/imported/Drawing 1.wav-2e868d88462e692c61da9a590b6cd8da.sample"
 
 [deps]
 
-source_file="res://Drawing 1.wav"
-dest_files=["res://.godot/imported/Drawing 1.wav-d5cc7053f62cfe14c5978340b1c5de7c.sample"]
+source_file="res://Assets/Audio/Drawing 1.wav"
+dest_files=["res://.godot/imported/Drawing 1.wav-2e868d88462e692c61da9a590b6cd8da.sample"]
 
 [params]
 

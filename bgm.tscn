@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://er2qfkg6avav"]
-
-[ext_resource type="AudioStream" uid="uid://cuepu1bmjucql" path="res://Stream Loops 2024-05-29.ogg" id="1_huu1c"]
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D"]
-process_mode = 3
-stream = ExtResource("1_huu1c")
-autoplay = true

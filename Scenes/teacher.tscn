@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cih0bpeldfxo1" path="res://Assets/TeacherSpriteSheet.png" id="1_ugeoy"]
 [ext_resource type="Script" path="res://Scripts/teacher_view.gd" id="3_65ctx"]
 [ext_resource type="Script" path="res://Scripts/teacher_triangle.gd" id="4_w3r0o"]
-[ext_resource type="AudioStream" uid="uid://cuvs2cpmyp2fs" path="res://Block Break 1.wav" id="5_61ag6"]
+[ext_resource type="AudioStream" uid="uid://cuvs2cpmyp2fs" path="res://Assets/Audio/Block Break 1.wav" id="5_61ag6"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h5x48"]
 radius = 12.0
