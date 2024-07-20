@@ -2,7 +2,7 @@ extends AnimatedSprite2D
 
 var isLooking = false;
 
-var isCheating = false;
+@export var isCheating = false;
 
 @onready
 var camera = get_node("%Camera2D");
@@ -90,7 +90,3 @@ func _process(delta):
 			camera.position.x -= cameraSpeed * delta;
 		if camera.position.x < originalCamX: 
 			camera.position.x += cameraSpeed * delta;
-	
-		
-	
-		
