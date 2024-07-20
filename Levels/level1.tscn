@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://6yrc42yn2ts1"]
+[gd_scene load_steps=13 format=3 uid="uid://6yrc42yn2ts1"]
 
 [ext_resource type="TileSet" uid="uid://nled28ppjqbo" path="res://class_tileset.tres" id="1_2gxfu"]
 [ext_resource type="PackedScene" uid="uid://dpuiga0yokbpx" path="res://player.tscn" id="2_an1hv"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://b3mpdhgmjg2h7" path="res://Scenes/progress_bar.tscn" id="8_uyh27"]
 [ext_resource type="PackedScene" uid="uid://dgwtatm0l4lcl" path="res://Scenes/randomized_path_follow.tscn" id="9_51gu2"]
 [ext_resource type="PackedScene" uid="uid://dsabe8wrdlhq" path="res://game_timer.tscn" id="9_i706d"]
+[ext_resource type="PackedScene" uid="uid://dj6m1p12lw8pw" path="res://Lives.tscn" id="10_vj1m3"]
 
 [sub_resource type="Curve2D" id="Curve2D_6ue1s"]
 _data = {
@@ -138,7 +139,13 @@ position = Vector2(260, 79)
 offset_left = 955.0
 offset_top = 34.0
 offset_right = -11.0
-duration = 10
+
+[node name="Control" parent="CanvasLayer" instance=ExtResource("10_vj1m3")]
+offset_left = 82.0
+offset_top = 123.0
+offset_right = 82.0
+offset_bottom = 123.0
+scale = Vector2(4, 4)
 
 [node name="Path2D" type="Path2D" parent="."]
 curve = SubResource("Curve2D_6ue1s")
