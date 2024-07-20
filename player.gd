@@ -81,7 +81,7 @@ func _process(delta):
 		audioStreamPlayer.stop();
 		self.play("idle")
 		
-	if !isLooking:
+	'''if !isLooking:
 		if camera.position.y > originalCamY: 
 			camera.position.y -= cameraSpeed * delta;
 		if camera.position.y < originalCamY: 
@@ -89,4 +89,4 @@ func _process(delta):
 		if camera.position.x > originalCamX: 
 			camera.position.x -= cameraSpeed * delta;
 		if camera.position.x < originalCamX: 
-			camera.position.x += cameraSpeed * delta;
+			camera.position.x += cameraSpeed * delta;'''
