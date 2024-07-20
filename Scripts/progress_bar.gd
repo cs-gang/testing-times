@@ -10,7 +10,7 @@ func _process(delta):
 	if Input.is_action_pressed("cheat"):
 		prog_bar_value += 1
 		if prog_bar_value%60 == 0:
-			$ProgBar.value +=5
+			$ProgBar.value +=4
 	else:
 		prog_bar_value = 0
 	

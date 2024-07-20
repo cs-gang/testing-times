@@ -1,0 +1,126 @@
+[gd_scene load_steps=5 format=3 uid="uid://cmrmcklcy41c0"]
+
+[ext_resource type="Script" path="res://Scripts/instructions.gd" id="1_2i2xi"]
+[ext_resource type="FontFile" uid="uid://cdi0cxfwvin85" path="res://Assets/Fonts/upheavtt.ttf" id="2_0xkwc"]
+[ext_resource type="Texture2D" uid="uid://blnsvy2h22vxu" path="res://Assets/Menu/play1.png" id="3_kxvxy"]
+[ext_resource type="Texture2D" uid="uid://c8aj4aqc0bex2" path="res://Assets/Menu/play2.png" id="4_sm66j"]
+
+[node name="Instructions" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2i2xi")
+
+[node name="BgColor" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.65098, 0.505882, 0.368627, 1)
+
+[node name="InstructionsLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -505.0
+offset_top = 40.0
+offset_right = 506.0
+offset_bottom = 108.0
+grow_horizontal = 2
+pivot_offset = Vector2(505, 34)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_0xkwc")
+theme_override_font_sizes/font_size = 70
+text = "INSTRUCTIONS"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -505.0
+offset_top = 131.0
+offset_right = 506.0
+offset_bottom = 283.0
+grow_horizontal = 2
+pivot_offset = Vector2(505, 76)
+theme_override_fonts/font = ExtResource("2_0xkwc")
+theme_override_font_sizes/font_size = 30
+text = "You have been given a suprise test for which you
+haven't prepared. 
+
+
+
+"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -505.0
+offset_top = 213.0
+offset_right = 506.0
+offset_bottom = 354.0
+grow_horizontal = 2
+pivot_offset = Vector2(505, 76)
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_0xkwc")
+theme_override_font_sizes/font_size = 35
+text = "Your only option is to cheat off others!
+
+
+
+"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -505.0
+offset_top = 270.0
+offset_right = 506.0
+offset_bottom = 484.0
+grow_horizontal = 2
+pivot_offset = Vector2(505, 76)
+theme_override_fonts/font = ExtResource("2_0xkwc")
+theme_override_font_sizes/font_size = 30
+text = "Use W,A,S,d to look around 
+Hold spacebar to cheat
+and use your skill to avoid the teacher.
+
+dont look suspicious and dont take too long.
+
+
+"
+horizontal_alignment = 1
+
+[node name="PlayButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -71.0
+offset_top = -148.0
+offset_right = 71.0
+offset_bottom = -108.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(2, 2)
+pivot_offset = Vector2(71, 20)
+texture_normal = ExtResource("3_kxvxy")
+texture_pressed = ExtResource("4_sm66j")
+
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
